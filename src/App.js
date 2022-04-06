@@ -1,8 +1,6 @@
 import React from "react";
 import Body from "./Body";
-import Routines from "./Body";
 import "./styles.css";
-import { baseUrl } from "./constant.js";
 
 function App() {
   return (
@@ -24,7 +22,7 @@ function App() {
         <h2 className="instructions">
           Browse below for real skincare routines used by real people
         </h2>
-        <Body corny="Set your eyes upon the glorious routines" />
+        <Body corny="Look at all these cool ass routines!" />
       </div>
       {/* <div className="container">{baseUrl}routines</div> */}
     </React.Fragment>
