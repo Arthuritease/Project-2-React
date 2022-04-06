@@ -1,5 +1,8 @@
 import React from "react";
+import Body from "./Body";
+import Routines from "./Body";
 import "./styles.css";
+import { baseUrl } from "./constant.js";
 
 function App() {
   return (
@@ -14,12 +17,16 @@ function App() {
       </div>
       <img
         className="mainFace"
-        src={require("./images/healthy-skin.jpeg")}
+        src={require("./image/healthy-skin.jpeg")}
         alt="smiling woman with nice skin"
       />
-      <h2 className="instructions">
-        Browse below for real skincare routines used by real people
-      </h2>
+      <div className="routinesCard">
+        <h2 className="instructions">
+          Browse below for real skincare routines used by real people
+        </h2>
+        <Body corny="Set your eyes upon the glorious routines" />
+      </div>
+      {/* <div className="container">{baseUrl}routines</div> */}
     </React.Fragment>
   );
 }
