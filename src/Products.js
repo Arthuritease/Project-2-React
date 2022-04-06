@@ -4,18 +4,18 @@ import { baseUrl } from "./constant";
 export default class Body extends React.Component {
   state = {
     message: this.props.corny,
-    routines: [
+    products: [
       {
-        name: "Ace",
+        name: "something",
       },
     ],
   };
   async componentDidMount() {
-    let r = await axios.get(baseUrl + "routines");
-    let allRoutines = r.data;
+    let r = await axios.get(baseUrl + "products");
+    let allProducts = r.data;
     // console.log(baseUrl + "routines") confirmed to be working
     this.setState({
-      routines: allRoutines,
+      products: allProducts,
     });
   }
   /**
@@ -23,18 +23,18 @@ export default class Body extends React.Component {
    * but arrows cos "this" keyword refer to the component while
    * normal functions "this" refers to the function
    */
-  renderRoutines = () => {
-    let routineArray = this.state.routines.map((eachRoutine, index) => {
+  renderProducts = () => {
+    let productArray = this.state.products.map((eachProduct, index) => {
       return (
-        <React.Fragment key={`eachRoutine${index}`}>
+        <React.Fragment key={`eachProduct${index}`}>
           <div>
-            <h1>{eachRoutine.title}</h1>
-            <span>{eachRoutine.description}</span>
+            <h1>{eachProduct.name}</h1>
+            <span>{eachProduct.description}</span>
           </div>
         </React.Fragment>
       );
     });
-    return routineArray;
+    return productArray;
   };
 
   render() {
@@ -42,16 +42,14 @@ export default class Body extends React.Component {
       <React.Fragment>
         <div
           style={{
-            fontFamily: "cursive",
-            color: "red",
-            textAlign: "center",
-            border: "black solid 1px",
+            backgroundColor: "beige",
+            marginTop: "2px",
+            fontFamily: "revert",
           }}
         >
           {this.state.message}
-          {/* {this.state.routines} */}
         </div>
-        <div>{this.renderRoutines()}</div>
+        <div>{this.renderProducts()}</div>
       </React.Fragment>
     );
   }

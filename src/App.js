@@ -1,11 +1,11 @@
 import React from "react";
 import Body from "./Body";
 import "./styles.css";
-
+import Products from "./Products";
 function App() {
   return (
     <React.Fragment>
-      <h1 style={{ backgroundColor: "red" }}>Face it bodoh</h1>
+      <h1 style={{ backgroundColor: "red" }}> JUST FACE IIIIIIIT</h1>
       <div
         className="intro"
         style={{ backgroundColor: "coral", fontFamily: "Tahoma" }}
@@ -23,6 +23,9 @@ function App() {
           Browse below for real skincare routines used by real people
         </h2>
         <Body corny="Look at all these cool ass routines!" />
+      </div>
+      <div className="productBody">
+        <Products corny="Look at me, be pretty :D" />
       </div>
       {/* <div className="container">{baseUrl}routines</div> */}
     </React.Fragment>
