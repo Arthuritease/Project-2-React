@@ -11,7 +11,7 @@ export default function NewProduct(props) {
               className="nav-link active"
               aria-current="page"
             >
-              Refresh our product list!
+              Rejuvenate our routines!
             </button>
           </li>
           {/* <li className="nav-item">

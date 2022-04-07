@@ -1,5 +1,5 @@
 .mainFace {
-  display: block;
+  display: flex;
   border: black solid 2px;
   /* justify-content: center; */
   margin-left: auto;

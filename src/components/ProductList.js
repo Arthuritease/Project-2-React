@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { baseUrl } from "../constant";
+import NewProduct from "./NewProduct";
 export default class ProductList extends React.Component {
   state = {
-    message: this.props.corny,
+    active: "ProductList",
     products: [
       {
         name: "something",
@@ -41,9 +42,9 @@ export default class ProductList extends React.Component {
             fontFamily: "revert",
           }}
         >
-          {this.state.message}
+          {this.renderProducts()}
         </div>
-        <div>{this.renderProducts()}</div>
+        <NewProduct />
       </React.Fragment>
     );
   }

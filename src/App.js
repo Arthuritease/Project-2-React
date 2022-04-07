@@ -3,6 +3,7 @@ import Body from "./Body";
 import "./styles.css";
 import Products from "./Products";
 import ProductList from "./components/ProductList";
+
 function App() {
   return (
     <React.Fragment>
@@ -23,12 +24,12 @@ function App() {
         <h2 className="instructions">
           Browse below for real skincare routines used by real people
         </h2>
-        <Body corny="Look at all these cool ass routines!" />
-      </div>
-      <div>
-        <Products />
+        <Body corny="Look at all these cool ass routines or products" />
       </div>
       {/* <div>
+        <Products />
+      </div>
+      <div>
         <ProductList /> succesfully linked
       </div> */}
       {/* <div className="container">{baseUrl}routines</div> */}
