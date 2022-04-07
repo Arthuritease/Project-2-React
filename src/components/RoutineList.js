@@ -93,8 +93,8 @@ export default class RoutineList extends React.Component {
           }}
         >
           {this.renderRoutines()}
+          <NewRoutine />
         </div>
-        <NewRoutine />
       </React.Fragment>
     );
   }
