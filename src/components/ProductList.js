@@ -30,7 +30,7 @@ export default class ProductList extends React.Component {
           <Card style={{ width: "30rem" }}>
             <Card.Img variant="top" src={require("../image/skincare2.jpeg")} />
             <Card.Body>
-              <Card.Title>{eachProduct.title}</Card.Title>
+              <Card.Title>{eachProduct.name}</Card.Title>
               <Card.Text>{eachProduct.description}</Card.Text>
               {/* <Card.Text>{this.renderComments(eachRoutine)}</Card.Text> */}
               {/* <Button variant="primary">won't go somewhere</Button> */}
