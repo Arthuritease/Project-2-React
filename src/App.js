@@ -24,7 +24,7 @@ function App() {
         <h2 className="instructions">
           Browse below for real skincare routines used by real people
         </h2>
-        <Body corny="Look at all these cool ass routines or products" />
+        <Body corny="The Journey To Your Skin But Better Begins Here..." />
       </div>
       {/* <div>
         <Products />

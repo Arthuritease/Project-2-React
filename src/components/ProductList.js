@@ -2,14 +2,13 @@ import React from "react";
 import axios from "axios";
 import { baseUrl } from "../constant";
 import NewProduct from "./NewProduct";
+import Card from "react-bootstrap/Card";
 export default class ProductList extends React.Component {
   state = {
-    active: "ProductList",
-    products: [
-      {
-        name: "something",
-      },
-    ],
+    message: this.props.corny,
+    active: "products",
+    routines: [],
+    products: [],
   };
   async componentDidMount() {
     let r = await axios.get(baseUrl + "products");
@@ -23,10 +22,20 @@ export default class ProductList extends React.Component {
     let productArray = this.state.products.map((eachProduct, index) => {
       return (
         <React.Fragment key={`eachProduct${index}`}>
-          <div>
+          {/* <div>
             <h1>{eachProduct.name}</h1>
-            <span>{eachProduct.description}</span>
-          </div>
+            <h4>{eachProduct.description}</h4>
+            <>{eachProduct.type}</>
+          </div> */}
+          <Card style={{ width: "30rem" }}>
+            <Card.Img variant="top" src={require("../image/skincare2.jpeg")} />
+            <Card.Body>
+              <Card.Title>{eachProduct.title}</Card.Title>
+              <Card.Text>{eachProduct.description}</Card.Text>
+              {/* <Card.Text>{this.renderComments(eachRoutine)}</Card.Text> */}
+              {/* <Button variant="primary">won't go somewhere</Button> */}
+            </Card.Body>
+          </Card>
         </React.Fragment>
       );
     });

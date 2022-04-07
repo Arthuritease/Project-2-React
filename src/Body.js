@@ -3,6 +3,8 @@ import axios from "axios";
 import { baseUrl } from "./constant";
 import ProductList from "./components/ProductList";
 import RoutineList from "./components/RoutineList";
+import Button from "react-bootstrap/Button";
+
 export default class Body extends React.Component {
   state = {
     message: this.props.corny,
@@ -90,7 +92,7 @@ export default class Body extends React.Component {
           <div
             style={{
               fontFamily: "cursive",
-              color: "red",
+              color: "black",
               textAlign: "center",
               border: "red solid 4px",
             }}
@@ -110,12 +112,22 @@ export default class Body extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <button onClick={() => this.updateActive("routines")}>
+          <Button
+            variant="dark"
+            className="m-2"
+            size="sm"
+            onClick={() => this.updateActive("routines")}
+          >
             Routines
-          </button>
-          <button onClick={() => this.updateActive("products")}>
+          </Button>
+          <Button
+            variant="dark"
+            className="m-2"
+            size="sm"
+            onClick={() => this.updateActive("products")}
+          >
             Products
-          </button>
+          </Button>
         </div>
 
         <div>{this.renderContent()}</div>
