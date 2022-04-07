@@ -11,6 +11,7 @@ export default class Body extends React.Component {
     active: "routines",
     routines: [],
     products: [],
+    comments: [],
   };
   // async componentDidMount() {
   //   let r = await axios.get(baseUrl + "routines");

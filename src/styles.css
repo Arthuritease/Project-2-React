@@ -17,3 +17,8 @@
   margin-right: auto;
   text-align: center;
 }
+.routineComments {
+  display: inline-block;
+  color: salmon;
+  font-size: medium;
+}

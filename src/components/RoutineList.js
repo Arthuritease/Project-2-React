@@ -10,7 +10,9 @@ export default class RoutineList extends React.Component {
     active: "routines",
     routines: [],
     products: [],
+    comments: [],
   };
+
   async componentDidMount() {
     let r = await axios.get(baseUrl + "routines");
     let allRoutines = r.data;
@@ -24,9 +26,40 @@ export default class RoutineList extends React.Component {
    * but arrows cos "this" keyword refer to the component while
    * normal functions "this" refers to the function
    */
+  renderComments = (eachRoutine) => {
+    // console.log("---------------");
+    // console.log(eachRoutine.comments);
+    // console.log("---------------");
+    return eachRoutine.comments.map((individualComments, index) => {
+      return (
+        // <React.Fragment key={`individualComments${index}`}>
+        //   <h6>comments: {individualComments.description}</h6>
+        //   <h6>score: {individualComments.score}</h6>
+        //   <h6>date: {individualComments.date}</h6>
+        // </React.Fragment>
+
+        <React.Fragment key={`individualComments${index}`}>
+          <span className="routineComments">
+            <strong>comments: </strong>
+            {individualComments.description}
+            <br />
+            <strong>score: </strong>
+            {individualComments.score}
+            <br />
+            <strong>date: </strong>
+            {individualComments.date}
+            <br />
+          </span>
+        </React.Fragment>
+      );
+    });
+  };
 
   renderRoutines = () => {
     let routineArray = this.state.routines.map((eachRoutine, index) => {
+      // console.log("---------------");
+      // console.log(eachRoutine);
+      // console.log("---------------");
       return (
         <React.Fragment key={`eachRoutine${index}`}>
           {/* <div>
@@ -39,7 +72,7 @@ export default class RoutineList extends React.Component {
             <Card.Body>
               <Card.Title>{eachRoutine.title}</Card.Title>
               <Card.Text>{eachRoutine.description}</Card.Text>
-              {/* <Card.Text>{this.renderComments(eachRoutine)}</Card.Text> */}
+              <Card.Text>{this.renderComments(eachRoutine)}</Card.Text>
               {/* <Button variant="primary">won't go somewhere</Button> */}
             </Card.Body>
           </Card>
