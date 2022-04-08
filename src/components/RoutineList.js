@@ -16,6 +16,7 @@ export default class RoutineList extends React.Component {
   async componentDidMount() {
     let r = await axios.get(baseUrl + "routines");
     let allRoutines = r.data;
+    console.log(allRoutines);
     // console.log(baseUrl + "routines") confirmed to be working
     this.setState({
       routines: allRoutines,
@@ -27,9 +28,6 @@ export default class RoutineList extends React.Component {
    * normal functions "this" refers to the function
    */
   renderComments = (eachRoutine) => {
-    // console.log("---------------");
-    // console.log(eachRoutine.comments);
-    // console.log("---------------");
     return eachRoutine.comments.map((individualComments, index) => {
       return (
         // <React.Fragment key={`individualComments${index}`}>
@@ -67,13 +65,12 @@ export default class RoutineList extends React.Component {
             <h4>{eachRoutine.description}</h4>
             <p>{eachRoutine.timing}</p>
           </div> */}
-          <Card style={{ width: "30rem" }}>
+          <Card>
             <Card.Img variant="top" src={require("../image/skincare.jpeg")} />
             <Card.Body>
               <Card.Title>{eachRoutine.title}</Card.Title>
               <Card.Text>{eachRoutine.description}</Card.Text>
-              <Card.Text>{this.renderComments(eachRoutine)}</Card.Text>
-              {/* <Button variant="primary">won't go somewhere</Button> */}
+              {/* <Card.Text>{this.renderComments(eachRoutine)}</Card.Text> */}
             </Card.Body>
           </Card>
         </React.Fragment>

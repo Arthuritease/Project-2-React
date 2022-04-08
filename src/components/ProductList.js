@@ -27,7 +27,7 @@ export default class ProductList extends React.Component {
             <h4>{eachProduct.description}</h4>
             <>{eachProduct.type}</>
           </div> */}
-          <Card style={{ width: "30rem" }}>
+          <Card>
             <Card.Img variant="top" src={require("../image/skincare2.jpeg")} />
             <Card.Body>
               <Card.Title>{eachProduct.name}</Card.Title>
