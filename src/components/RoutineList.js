@@ -70,7 +70,7 @@ export default class RoutineList extends React.Component {
             <Card.Body>
               <Card.Title>{eachRoutine.title}</Card.Title>
               <Card.Text>{eachRoutine.description}</Card.Text>
-              {/* <Card.Text>{this.renderComments(eachRoutine)}</Card.Text> */}
+              <Card.Text>{this.renderComments(eachRoutine)}</Card.Text>
             </Card.Body>
           </Card>
         </React.Fragment>
