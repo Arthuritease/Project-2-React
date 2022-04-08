@@ -18,10 +18,24 @@ export default class NewRoutine extends React.Component {
       [event.target.name]: event.target.value,
     });
   };
-  updateCheckBox = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+  updateCheckBox = (ev) => {
+    if (this.state.skin_type.includes(ev.target.value)) {
+      let toRemove = this.state.skin_type.findIndex((eachSkinType) => {
+        return eachSkinType === ev.target.value;
+      });
+      let cloned = [
+        ...this.state.skin_type.slice(0, toRemove),
+        ...this.state.skin_type.slice(toRemove + 1),
+      ];
+      this.setState({
+        skin_type: cloned,
+      });
+    } else {
+      let cloned = [...this.state.skin_type, ev.target.value];
+      this.setState({
+        skin_type: cloned,
+      });
+    }
   };
   render() {
     return (
@@ -165,6 +179,9 @@ export default class NewRoutine extends React.Component {
                   <div className="checkboxMain">
                     <div className="mb-3 form-check">
                       <input
+                        onChange={this.updateCheckBox}
+                        value="dry"
+                        checked={this.state.skin_type.includes("dry")}
                         type="checkbox"
                         className="form-check-input"
                         id="drySkin"
@@ -175,6 +192,9 @@ export default class NewRoutine extends React.Component {
                     </div>
                     <div className="mb-3 form-check">
                       <input
+                        onChange={this.updateCheckBox}
+                        value="combi_D"
+                        checked={this.state.skin_type.includes("combi_D")}
                         type="checkbox"
                         className="form-check-input"
                         id="combinationDry"
@@ -188,6 +208,9 @@ export default class NewRoutine extends React.Component {
                     </div>
                     <div className="mb-3 form-check">
                       <input
+                        onChange={this.updateCheckBox}
+                        value="combi_O"
+                        checked={this.state.skin_type.includes("combi_O")}
                         type="checkbox"
                         className="form-check-input"
                         id="combinationOily"
@@ -201,14 +224,14 @@ export default class NewRoutine extends React.Component {
                     </div>
                     <div className="mb-3 form-check">
                       <input
+                        onChange={this.updateCheckBox}
+                        value="oily"
+                        checked={this.state.skin_type.includes("oily")}
                         type="checkbox"
                         className="form-check-input"
                         id="oilySkin"
                       />
-                      <label
-                        className="form-check-label"
-                        htmlFor="exampleCheck1"
-                      >
+                      <label className="form-check-label" htmlFor="oilySkin">
                         Oily
                       </label>
                     </div>
